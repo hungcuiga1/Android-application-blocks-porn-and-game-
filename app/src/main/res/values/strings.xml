@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NGĂN</string>
+    <string name="recording">Recoding</string>
+    <string name="service_name">NGĂN</string>
+    <string name="nut1">Nhấn nút này để bắt đầu giám sát</string>
+    <string name="nut1_t">Sau khi thấy hai thông báo hiện trên thanh trạng thái thì đã bật thành công</string>
+    <string name="nut2">Nhấn nút này để dừng giám sát</string>
+    <string name="edit1">Lựa chọn thời gian chống gỡ</string>
+    <string name="edit1_t">Sau khi thấy hai thông báo của nút 1 nhấn nút này</string>
+    <string name="nut3">Bật tính năng chống gỡ</string>
+    <string name="nut3_t">Sau khi nhập thời gian,nhấn nút này chọn "Dịch vụ được cài đặt" nhấn bật lần lượt theo thứ tự "NGĂN1" "NGĂN2"</string>
+    <string name="nut4">Nhận mail gửi lịch sử hôm nay khi phát hiện điều không tốt</string>
+    <string name="nut5">Hủy gửi mail</string>
+</resources>

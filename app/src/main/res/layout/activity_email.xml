@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#FFEBCD"
+    android:orientation="vertical"
+    tools:context=".SendMailActivity">
+
+    <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="30dp"
+            android:hint="Nhập email của bạn"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center" />
+
+    <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="30dp"
+            android:hint="Nhập code nhận được"
+            android:inputType="numberDecimal"
+            android:textAlignment="center" />
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Gửi email" />
+
+    <Button
+            android:id="@+id/button2"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Xác nhận mã code" />
+</LinearLayout>
